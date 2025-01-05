@@ -4,9 +4,152 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="./script/script.js"></script>
 </head>
 <body>
-    <p style="font-size: 40px; color: green;">test</p>
-    <p style="font-size: 40px; color: green;">test</p>
+    <div class="container">
+        <div class="logo-wrapper">
+            <img src="./imgs/logo.png" id="logo" alt="">
+        </div>
+
+        <h1>Калькулятор цен<br>дизайн-проектов</h1>
+        
+        <div class="line"></div>
+
+        <h2>Укажите все параметры объекта</h2>
+
+        <div class="dropdown" data-dropdown>
+            <div class="dropdown-select weakColor" onclick="toggleDropdown(this)">
+              Объект
+              <img src="./imgs/downArrow.svg" alt="Arrow" class="dropdown-arrow">
+            </div>
+            <div class="dropdown-options">
+              <div class="dropdown-option" onclick="selectOption(this)">Квартира</div>
+              <div class="dropdown-option" onclick="selectOption(this)">Дом</div>
+              <div class="dropdown-option" onclick="selectOption(this)">Таунхаус</div>
+              <div class="dropdown-option" onclick="selectOption(this)">Гостиница</div>
+              <div class="dropdown-option" onclick="selectOption(this)">Офис</div>
+              <div class="dropdown-option" onclick="selectOption(this)">Салон красоты</div>
+              <div class="dropdown-option" onclick="selectOption(this)">Ресторан</div>
+            </div>
+        </div>
+        
+        <div class="choose-area">
+            <label for="areaInput" class="areaInput-label"></label>
+            <input type="text" id="areaInput" class="areaInput" placeholder="Площадь"> м<sup>2</sup>
+        </div>
+
+        <div class="input-group">
+            <label>
+              <input type="radio" name="designType" value="designProject" onclick="toggleSubOptions('designProjectOptions')">
+              Дизайн-проект (под ключ)
+            </label>
+            <label>
+              <input type="radio" name="designType" value="layoutDesign" onclick="toggleSubOptions('layoutDesignOptions')">
+              Планировочный дизайн
+            </label>
+        </div>
+        
+        <div id="designProjectOptions" class="sub-options">
+            <label>
+                <input type="checkbox" name="designProjectOption" value="interiorDesign">
+                3D-визуализация
+            </label>
+            <label>
+                <input type="checkbox" name="designProjectOption" value="3dVisualization">
+                Авторский надзор
+            </label>
+            <label>
+                <input type="checkbox" name="designProjectOption" value="furniturePlan">
+                Технический раздел
+            </label>
+            <label>
+                <input type="checkbox" name="designProjectOption" value="furniturePlan">
+                Подбор материалов
+            </label>
+            <label>
+                <input type="checkbox" name="designProjectOption" value="furniturePlan">
+                Подбор мебели
+            </label>
+            <label>
+                <input type="checkbox" name="designProjectOption" value="furniturePlan">
+                Текстильное оформление
+            </label>
+          </div>
+        
+          <div id="layoutDesignOptions" class="sub-options">
+            <label>
+                <input type="checkbox" name="layoutDesignOption" value="zoningPlan">
+                Технический раздел
+            </label>
+            <label>
+                <input type="checkbox" name="layoutDesignOption" value="furniturePlacement">
+                Подбор материалов
+            </label>
+            <label>
+                <input type="checkbox" name="layoutDesignOption" value="detailedPlans">
+                Подбор мебели
+            </label>
+            <label>
+                <input type="checkbox" name="layoutDesignOption" value="detailedPlans">
+                Декорирование
+            </label>
+            <label>
+                <input type="checkbox" name="layoutDesignOption" value="detailedPlans">
+                3D-визуализация (интерьер)
+            </label>
+            <label>
+                <input type="checkbox" name="layoutDesignOption" value="detailedPlans">
+                Текстильное оформление
+            </label>
+            <label>
+                <input type="checkbox" name="layoutDesignOption" value="detailedPlans">
+                Авторский надзор
+            </label>
+          </div>
+
+          <div class="line" style="margin-top: 20px;"></div>
+          <div id="calculation">
+            <span>Итого: </span>
+            <span>1 000 000 </span>
+            <span>р.</span>
+          </div>
+          <div class="line" style="margin-bottom: 20px;"></div>
+
+          <div class="info">
+            <h2 style="text-align: left;">В состав проекта входит:</h2>
+
+            <div class="infoblock">
+                <div class="infoblock-title">
+                    <img src="./imgs/ellipse.svg" alt="">
+                    <h3>Планировочный проект</h3>
+                </div>
+                <p>ОБМЕР №1</p>
+                <p>Планировочное решение</p>
+                <p>Планы открывания межкомнатных дверей</p>
+                <p>Планы расстановки мебели</p>
+                <p>Планы расстановки сантехники</p>
+            </div>
+
+            <div class="infoblock">
+                <div class="infoblock-title">
+                    <img src="./imgs/ellipse.svg" alt="">
+                    <h3>Технический раздел</h3>
+                </div>
+                <p>План Вентиляция</p>
+                <p>План Кондиционирование</p>
+                <p>План Отопление</p>
+                <p>Планы Электрика:</p>
+                <p style="margin-left: 30px;">розеточные группы</p>
+                <p style="margin-left: 30px;">слаботочка</p>
+                <p style="margin-left: 30px;">освещение</p>
+                <p style="margin-left: 30px;">теплые полы</p>
+            </div>
+
+          </div>
+
+    </div>
 </body>
 </html>
